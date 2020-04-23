@@ -305,6 +305,18 @@ gtest_force_shared_crt:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
+//Value Computed by CMake
+my_simulation_BINARY_DIR:STATIC=/home/omkar/wroros_ws/build/my_simulation
+
+//Value Computed by CMake
+my_simulation_SOURCE_DIR:STATIC=/home/omkar/wroros_ws/src/my_simulation
+
+//Value Computed by CMake
+robot_description_BINARY_DIR:STATIC=/home/omkar/wroros_ws/build/robot_description
+
+//Value Computed by CMake
+robot_description_SOURCE_DIR:STATIC=/home/omkar/wroros_ws/src/robot_description
+
 
 ########################
 # INTERNAL cache entries
@@ -407,7 +419,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
