@@ -1,15 +1,34 @@
 <?xml version="1.0" ?>
 <robot name="WRO" xmlns:xacro="https://www.ros.org/wiki/xacro" >
-<gazebo reference="link_chassis">
+  
+  <gazebo reference="link_chassis">
     <material>Gazebo/Orange</material>
   </gazebo>
+
   <gazebo reference="link_left_wheel">
     <material>Gazebo/Blue</material>
+    <mu1 value="1.0"/>
+    <mu2 value="1.0"/>
+    <turnGravityOff>false</turnGravityOff>
   </gazebo>
+
   <gazebo reference="link_right_wheel">
     <material>Gazebo/Blue</material>
+    <mu1 value="1.0"/>
+    <mu2 value="1.0"/>
+    <turnGravityOff>false</turnGravityOff>
   </gazebo>
   
+
+
+  <gazebo reference="link_caster">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="link_caster_front">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
   <gazebo>  
       <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
         <alwaysOn>true</alwaysOn>

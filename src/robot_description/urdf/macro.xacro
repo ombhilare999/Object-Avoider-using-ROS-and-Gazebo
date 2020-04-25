@@ -10,13 +10,13 @@
             <collision name="link_right_wheel_collision">
               <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
               <geometry>
-                <cylinder length="0.05" radius="0.1"/>
+                <cylinder length="0.04" radius="0.1"/>
               </geometry>
             </collision>
             <visual name="${name}_visual">
               <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
               <geometry>
-                <cylinder length="0.05" radius="0.1"/>
+                <cylinder length="0.04" radius="0.1"/>
               </geometry>
             </visual>
         </link>
@@ -30,6 +30,41 @@
         <axis rpy="0 0 0" xyz="0 1 0"/>
         <limit effort="10000" velocity="1000"/>
         <joint_properties damping="1.0" friction="1.0"/>
+      </joint>
+    </xacro:macro>
+    
+    <xacro:macro name="link_sensor" params="name">
+       <link name="${name}">
+        <inertial>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <mass value="1" />
+          <inertia ixx="0.001458333333" ixy="0" ixz="0"
+          iyy="0.001458333333" iyz="0"
+          izz="0.00125"/>
+        </inertial>
+    
+        <visual>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+            <cylinder radius="0.05" length="0.1"/>
+          </geometry>
+          <material name="white" />
+        </visual>
+    
+        <collision>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry>
+            <cylinder radius="0.05" length="0.1"/>
+          </geometry>
+        </collision>
+      </link>
+    </xacro:macro>
+
+    <xacro:macro name="joint_Sensor" params="name child ">
+      <joint name="joint_sensor_laser" type="fixed">
+        <origin xyz="0.25 0 0.05" rpy="0 0 0"/>
+        <parent link="link_chassis"/>
+        <child link="${child}"/>
       </joint>
     </xacro:macro>
 
