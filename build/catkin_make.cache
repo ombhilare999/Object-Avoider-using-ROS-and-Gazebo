@@ -1,2 +1,2 @@
-my_simulation:robot_description
+my_worlds:robot_description
 -DCATKIN_DEVEL_PREFIX=/home/omkar/wroros_ws/devel -DCMAKE_INSTALL_PREFIX=/home/omkar/wroros_ws/install -G Unix Makefiles
